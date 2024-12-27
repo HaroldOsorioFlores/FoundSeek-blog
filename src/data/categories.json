@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "Tecnologia",
+    "description": "All about programming and software development.",
+    "slug": "tecnologia",
+    "icon": "smartphone",
+    "color": "text-blue-500"
+  }
+]

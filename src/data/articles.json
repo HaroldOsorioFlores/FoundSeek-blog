@@ -1,0 +1,29 @@
+[
+  {
+    "id": "9474078073",
+    "title": "Personaliza tu CMD con Clink: Guía completa para mejorar tu experiencia en la línea de comandos",
+    "slug": "cmd-clink",
+    "excerpt": "prueba homa mundo",
+    "author": {
+      "name": "Juan David Rodriguez",
+      "description": "Desarrollador, escritor y creador de contenido digital.",
+      "short_name": "JDR",
+      "image_url": "https://avatars.githubusercontent.com/u/10000000?v=4"
+    },
+    "tags": "tecnologia",
+    "categories": [
+      {
+        "name": "Tecnologia"
+      }
+    ],
+    "content": [
+      {
+        "type": "Paragraph",
+        "text": "hola mundo",
+        "image_url": ""
+      }
+    ],
+    "image_url": "",
+    "publishedAt": 1699641600000
+  }
+]
