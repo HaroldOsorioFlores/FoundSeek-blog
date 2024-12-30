@@ -1,9 +1,31 @@
 import React from "react";
+import Script from "next/script";
+import type { Metadata, ResolvingMetadata } from "next";
 
 import { getArticleById } from "@/api/articles.api";
 import AvatarAuthor from "@/components/avatar";
-import { ContentType } from "@/components/contentType";
-import Image from "next/image";
+import { utilJsonLdArticle } from "@/lib/utils";
+import { generateArticleMetadata } from "@/lib/seo";
+import { ContentRenderer } from "@/components/contentRenderer";
+
+type Props = {
+  params: Promise<{ slug: string[] }>;
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = (await params).slug;
+  const id = slug[1];
+
+  const fetchArticle = await getArticleById(id);
+  const previousImages = (await parent).openGraph?.images || [];
+
+  if (!fetchArticle) return {};
+
+  return generateArticleMetadata(fetchArticle, previousImages);
+}
 
 export default function Post({
   params,
@@ -17,43 +39,49 @@ export default function Post({
 
   if (!fetchArticle) return <div>No se encontro el articulo</div>;
 
-  return (
-    <div className="max-w-4xl w-full mx-auto py-6 sm:px-6 lg:px-8 flex-grow">
-      <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
-        <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
-          <article className="mx-auto w-full max-w-3xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-            <header className="mb-4 lg:mb-6 not-format">
-              <AvatarAuthor author={fetchArticle.author} />
-              <p className="text-base text-gray-500 dark:text-gray-400 flex space-x-2 my-2">
-                <span>Publicado</span>
-                <time dateTime={"2022-02-08"} title="February 8th, 2022">
-                  Feb. 8, 2022
-                </time>
-              </p>
-              <h1 className="font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-lg dark:text-white">
-                {fetchArticle.title}
-              </h1>
-            </header>
-            {fetchArticle.content.map((content, index) => {
-              return (
-                <div key={content.type + index}>
-                  <ContentType sectionArticle={content} />
-                  {content.image_url.length > 0 && (
-                    <Image alt="image" src={content.image_url} />
-                  )}
-                </div>
-              );
-            })}
+  const dateArticle = new Date(fetchArticle.publishedAt).toLocaleDateString(
+    "es-PE"
+  );
 
-            {/* <figure><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png" alt="">
+  const jsonLd = utilJsonLdArticle(fetchArticle);
+
+  return (
+    <>
+      <Script
+        id="json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
+      />
+      <div className="max-w-4xl w-full mx-auto py-6 sm:px-6 lg:px-8 flex-grow article">
+        <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
+          <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
+            <article className="mx-auto w-full max-w-3xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert flex flex-col gap-4">
+              <header className="mb-4 not-format">
+                {fetchArticle.authors.map((author, index) => (
+                  <AvatarAuthor author={author} key={author.name + index} />
+                ))}
+                <p className="text-base text-gray-500 dark:text-gray-400 flex space-x-2 my-2">
+                  <span>Publicado</span>
+                  <time dateTime={"2022-02-08"} title="February 8th, 2022">
+                    {dateArticle}
+                  </time>
+                </p>
+                <h1 className="font-extrabold leading-tight text-gray-900 lg:text-4xl text-lg dark:text-white">
+                  {fetchArticle.title}
+                </h1>
+              </header>
+              {fetchArticle.content.map((content, index) => (
+                <ContentRenderer content={content} key={content.type + index} />
+              ))}
+              {/* <figure><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png" alt="">
               <figcaption>Digital art by Anonymous</figcaption>
           </figure>
            */}
-          </article>
-        </div>
-      </main>
+            </article>
+          </div>
+        </main>
 
-      {/* <aside
+        {/* <aside
         aria-label="Related articles"
         className="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800"
       >
@@ -81,6 +109,7 @@ export default function Post({
           </div>
         </div>
       </aside> */}
-    </div>
+      </div>
+    </>
   );
 }

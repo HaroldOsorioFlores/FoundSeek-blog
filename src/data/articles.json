@@ -1,29 +1,300 @@
 [
   {
     "id": "9474078073",
-    "title": "Personaliza tu CMD con Clink: Guía completa para mejorar tu experiencia en la línea de comandos",
+    "title": "Personaliza tu CMD con Clink y OhMyPosh: Guía completa para mejorar tu experiencia en la línea de comandos",
     "slug": "cmd-clink",
-    "excerpt": "prueba homa mundo",
-    "author": {
-      "name": "Juan David Rodriguez",
-      "description": "Desarrollador, escritor y creador de contenido digital.",
-      "short_name": "JDR",
-      "image_url": "https://avatars.githubusercontent.com/u/10000000?v=4"
-    },
-    "tags": "tecnologia",
+    "description": "Aprende a personalizar tu terminal de comandos con Clink y mejora tu productividad en la línea de comandos.",
+    "excerpt": "Transforma tu CMD en una terminal moderna con Clink y Oh My Posh. Aprende a personalizar y mejorar tu productividad en la línea de comandos de Windows.",
+    "keywords": [
+      "Personalizar CMD",
+      "Clink",
+      "línea de comandos Windows",
+      "productividad",
+      "OhMyPosh",
+      "Autocompletado inteligente",
+      "Temas y fuentes terminal"
+    ],
+    "abstract": "Descubre cómo personalizar y optimizar tu CMD en Windows con Clink y Oh My Posh. Esta guía completa te enseña paso a paso a mejorar tu experiencia en la línea de comandos, agregando funciones avanzadas como autocompletado inteligente, edición de comandos y personalización visual. Aprende a instalar Clink, integrar Oh My Posh, y aplicar temas y fuentes para transformar tu terminal en una herramienta moderna y altamente productiva. Ideal para desarrolladores y usuarios avanzados que buscan maximizar su eficiencia en el entorno de Windows.",
+    "authors": [
+      {
+        "id": "1",
+        "name": "FoundSeek",
+        "description": "Desarrollador, escritor y creador de contenido digital.",
+        "short_name": "FS",
+        "image_url": "https://avatars.githubusercontent.com/u/10000000?v=4"
+      }
+    ],
+    "tags": [
+      "CMD",
+      "Clink",
+      "Oh My Posh",
+      "Personalización de terminal",
+      "Línea de comandos Windows",
+      "Productividad en desarrollo",
+      "Autocompletado inteligente",
+      "Terminal moderna",
+      "Herramientas para desarrolladores",
+      "Windows Terminal"
+    ],
     "categories": [
       {
+        "id": "1",
         "name": "Tecnologia"
+      },
+      {
+        "id": "2",
+        "name": "Desarrollo de Software"
+      },
+      {
+        "id": "3",
+        "name": "Tutoriales y Guías"
+      },
+      {
+        "id": "4",
+        "name": "Productividad"
       }
     ],
+    "image_url": "https://example.com/imagen.jpg",
+    "publishedAt": "2024-12-29",
+    "updatedAt": "2024-12-29",
     "content": [
       {
-        "type": "Paragraph",
-        "text": "hola mundo",
-        "image_url": ""
+        "type": "paragraph",
+        "text": "Descubre cómo personalizar y optimizar tu CMD con Clink, una herramienta que agrega funciones avanzadas como edición de comandos, autocompletado y personalización."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/resultado-cmd-clink-ohmyposh.png_jsty5w.png",
+        "alt": "Resultado de la personalización del CMD con Clink y Oh My Posh",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Introducción"
+      },
+      {
+        "type": "paragraph",
+        "text": "En la actualidad, maximizar el rendimiento de las herramientas de trabajo es esencial para cualquier profesional. La eficiencia y la personalización son aspectos clave para optimizar nuestro flujo de trabajo y aumentar la productividad. Si eres usuario de Windows, es probable que hayas utilizado el Símbolo del sistema (CMD) en algún momento, ya sea para tareas cotidianas, desarrollo de software o administración del sistema. Sin embargo, a pesar de su utilidad, el CMD tradicional tiene limitaciones evidentes que pueden dificultar su uso: carece de autocompletado inteligente, ofrece una edición básica de comandos y su interfaz parece haberse quedado estancada en el pasado."
+      },
+      {
+        "type": "paragraph",
+        "text": "Aquí es donde entra Clink, una herramienta poderosa que transforma el CMD en una terminal moderna y altamente funcional. Con Clink, puedes disfrutar de características avanzadas como autocompletado inteligente, edición de comandos similar a la de Bash, historial de comandos accesible y personalización visual para que tu terminal se adapte a tus preferencias."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Instalación de Clink"
+      },
+      {
+        "type": "richtext",
+        "content": "<p>Para comenzar, como requisito, verifica que tengas instalado el “Windows Terminal”. Si no lo tienes, instálalo. Luego, instalamos Clink desde su página oficial: <a href='https://chrisant996.github.io/clink/' target='_blank' rel='noopener noreferrer'>https://chrisant996.github.io/clink/</a>.</p>"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/windows-terminal.png_bcbfar.png",
+        "alt": "Windows Terminal",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/pagina-clink.png_zimlsp.png",
+        "alt": "Imagen de la página de descarga de Clink",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "richtext",
+        "content": "<p>Descargamos el archivo .EXE, aceptamos los términos y condiciones, y finalizamos la instalación. A continuación, nos dirigimos al siguiente enlace: <a href='https://ohmyposh.dev/docs/installation/windows' target='_blank' rel='noopener noreferrer'>https://ohmyposh.dev/docs/installation/windows</a>. Una vez en la página, copiamos el comando: <code>winget install JanDeDobbeleer.OhMyPosh -s winget</code> y lo ejecutamos en PowerShell.</p>"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/instalar-ohmyposh-powershell.png_fbk3q1.png",
+        "alt": "Ingreso del comando de instalacion en powershell",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "paragraph",
+        "text": "Deberías ver un resultado similar al siguiente. Una vez que todo esté instalado, procederemos a integrar los componentes para personalizar nuestro CMD"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/resultado-ohmyposh-powershell.png_vzjisw.png",
+        "alt": "Resultado despues de la instalacion de OhMyPosh en powershell",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Personalización del CMD con OhMyPosh"
+      },
+      {
+        "type": "richtext",
+        "content": "<p>Seguidamente, abrimos nuestro explorador de archivos y escogemos una ruta para almacenar los temas de OhMyPosh. Te recomendaría que lo crees en la siguiente ruta con nombre <code>ThemesOhMyPosh</code>.</p>"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/carpeta-ohmyposh.png_jcctg1.png",
+        "alt": "Carpeta de recomendacion para almacenar los temas OhMyPosh",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "richtext",
+        "content": "<p>A continuación, ingresa al siguiente enlace: <a href='https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes' target='_blank' rel='noopener noreferrer'>https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes</a>. Descargas el ZIP y lo extraes, ingresas a la carpeta y copias todo el contenido de la carpeta <code>themes</code>.</p>"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/github-temas-ohmyposh.png_kyt6mo.png",
+        "alt": "Github de temas de OhMyPosh",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/extraer-carpetas-ohmyposh.png_t9ieb8.png",
+        "alt": "Extracción de carpetas de OhMyPosh y copiar temas",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/copiar-temas-ohmyposh.png_qczfz6.png",
+        "alt": "Pegar temas de OhMyPosh en la carpeta creada",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Configuración final"
+      },
+      {
+        "type": "richtext",
+        "content": "<p>Luego, copia la siguiente ruta en tu explorador de archivos: <code>%USERPROFILE%\\AppData\\Local\\clink</code>. Crea un archivo <code>oh-my-posh.lua</code>, puedes crearlo en .txt y luego cambiarlo a .lua. Abres el archivo en Bloc de Notas y copias el siguiente texto:</p>"
+      },
+      {
+        "type": "code",
+        "code": "load(io.popen('oh-my-posh init cmd --config C:/ThemesOhMyPosh/amro.omp.json'):read('*a'))()"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/carpeta-clink-appdata.png_hfcblo.png",
+        "alt": "Carpeta clink en AppData",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/archivo-ohmyposh-lua.png_duyswc.png",
+        "alt": "Archivo ohmyposh.lua configuracion OhMyPosh",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "richtext",
+        "content": "<p>¡Listo! Estamos cerca de terminar. Si te das cuenta, la palabra <code>amro.omp.json</code> es uno de los temas de nuestra carpeta donde hemos alojado los temas. Puedes revisar la página de OhMyPosh para explorar más temas.</p>"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/pagina-docs-ohmyposh-temas.png_a0desg.png",
+        "alt": "Página de documentación de OhMyPosh con temas disponibles",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "paragraph",
+        "text": "Seguidamente, cerramos el CMD si lo tenias abierto y lo volvemos abrir para que se reinicien los cambios! Deberías ver algo similar a la siguiente imagen, que aunque no es muy atractivo estéticamente, tiene solución."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/resultado-terminal-ohmyposh-poco-estetico.png_dvrbyi.png",
+        "alt": "Resultado de instalacion OhMyPosh poco estetico",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "heading",
+        "leve": 2,
+        "text": "Personalización de la fuente"
+      },
+      {
+        "type": "richtext",
+        "content": " <p>Ingresamos al siguiente enlace: <a href='https://www.nerdfonts.com/font-downloads' target='_blank' rel='noopener noreferrer'>https://www.nerdfonts.com/font-downloads</a> y escoges el tipo de letra que más te guste. En este caso, escogeré Hack Nerd Font Mono. Lo descargas y lo extraes en tu carpeta de descargas.</p>"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/pagina-descarga-hacknerdfont.png_mvk3ry.png",
+        "alt": "Página de descarga de Hack Nerd Font Mono",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "richtext",
+        "content": "<p>Ingresas a tu configuración de Windows, en <strong>Personalización > Fuentes</strong>, y arrastras la fuente descargada para instalarla. Una vez instalada, abre la configuración del CMD y selecciona la fuente que descargaste, en este caso, <code>Hack Nerd Font Mono</code>.</p>"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/instalar-nuevas-fuentes-windows.png_vofvep.png",
+        "alt": "Instalar nuevas fuentes en Windows 11",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/seleccionar-archivos-hacknerdfont.png_ifdh4k.png",
+        "alt": "Seleccionar archivos de Hack Nerd Font Mono para instalar en Windows",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/configuracion-cmd-fuentes.png_pvt4kh.png",
+        "alt": "Configuración de la fuente en el CMD de Windows",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/configuracion-cmd-fuentes-apariencia.png_tkojie.png",
+        "alt": "Configuración de la apariencia de la fuente en el CMD de Windows",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/configuracion-cmd-fuentes-apariencia-hacknerdfontmono.png_qroml9.png",
+        "alt": "Selección de la fuente Hack Nerd Font Mono en la configuración del CMD de Windows",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Resultado"
+      },
+      {
+        "type": "paragraph",
+        "text": "¡Y listo! Hemos terminado de personalizar nuestro CMD. Ahora ya puedes aprovechar al máximo tu productividad con el CMD, tienes acceso a opciones como historial y autocompletado. Si deseas más información y configurar exhaustivamente tu CMD, puedes revisar la documentación de Clink."
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/cmd-sin-personalizacion.png_uawrhl.png",
+        "alt": "Imagen del CMD sin personalización",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dqrtitrrs/image/upload/blog-personal/articles/personaliza%20cmd%2Bohmyposh/resultado-cmd-clink-ohmyposh.png_jsty5w.png",
+        "alt": "Imagen del CMD personalizado con Clink y Oh My Posh",
+        "width": 1000,
+        "height": 1000
       }
-    ],
-    "image_url": "",
-    "publishedAt": 1699641600000
+    ]
   }
 ]

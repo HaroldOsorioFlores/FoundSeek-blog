@@ -1,12 +1,12 @@
 import React from "react";
 import { CardArticle } from "@/components/cards/cardArticle";
-import { getArticles } from "@/api/articles.api";
+import { articles } from "@/actions/articles.action";
 
 export default function Home() {
-  const fetchArticles = React.use(getArticles());
+  const fetchArticles = React.use(articles());
 
   return (
-    <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 flex-grow">
+    <main className="max-w-7xl mx-auto p-6 lg:px-8 flex-grow">
       {/* <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
             Categorías

@@ -12,13 +12,17 @@ import { IArticle } from "@/lib/declarations";
 
 export function CardArticle({ post }: Readonly<{ post: IArticle }>) {
   return (
-    <Card className="hover:shadow-lg transition-shadow duration-300 min-w-96">
+    <Card className="hover:shadow-lg transition-shadow duration-300 max-w-96 w-full">
       <CardHeader>
         <CardTitle>{post.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-          {post.categories.map((categoryArticle) => categoryArticle.name)}
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 space-x-1 ">
+          {post.categories.map((categoryArticle) => (
+            <span key={categoryArticle.id + categoryArticle.name}>
+              {categoryArticle.name}
+            </span>
+          ))}
         </p>
         <p className="text-gray-700 dark:text-gray-300">{post.excerpt}</p>
       </CardContent>
