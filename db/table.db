@@ -1,0 +1,68 @@
+CREATE TABLE users (
+    id TEXT PRIMARY KEY,
+    uuid TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    role TEXT DEFAULT 'author',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE categories (
+    id TEXT PRIMARY KEY,
+    uuid TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    slug TEXT UNIQUE NOT NULL,
+    description TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE posts (
+    id TEXT PRIMARY KEY,
+    uuid TEXT UNIQUE NOT NULL,
+    title TEXT NOT NULL,
+    slug TEXT UNIQUE NOT NULL,
+    html TEXT NOT NULL,
+    excerpt TEXT,
+    featured BOOLEAN DEFAULT FALSE,
+    visibility TEXT DEFAULT 'public',
+    status TEXT DEFAULT 'published',
+    featured_image TEXT,
+    featured_image_alt TEXT,
+    featured_image_caption TEXT,
+    custom_excerpt TEXT,
+    meta_title TEXT,
+    meta_description TEXT,
+    canonical_url TEXT,
+    reading_time INTEGER,
+    comment_id TEXT,
+    author_id TEXT NOT NULL,
+    category_id TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    published_at DATETIME,
+    
+    FOREIGN KEY (author_id) REFERENCES users(id),
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+CREATE TABLE tags (
+    id TEXT PRIMARY KEY,
+    uuid TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    slug TEXT UNIQUE NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE post_tags (
+    post_id TEXT,
+    tag_id TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    PRIMARY KEY (post_id, tag_id),
+    FOREIGN KEY (post_id) REFERENCES posts(id),
+    FOREIGN KEY (tag_id) REFERENCES tags(id)
+);
